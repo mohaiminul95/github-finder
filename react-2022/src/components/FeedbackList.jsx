@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FeedbackItem from './FeedbackItem'
 
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, deleteItemHandler }) {
     if(!feedback || feedback.length === 0) {
         return <p>No Feedback Yet</p>
     }
@@ -10,7 +10,10 @@ function FeedbackList({ feedback }) {
         <div className='feedback-list'>
             {feedback.map((item) => (
                 <React.Fragment key={item.id}>
-                    <FeedbackItem item={item}/>
+                    <FeedbackItem 
+                        item={item} 
+                        deleteItemHandler={deleteItemHandler}
+                    />
                 </React.Fragment>
             ))}
         </div>
