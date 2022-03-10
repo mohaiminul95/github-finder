@@ -228,3 +228,11 @@ input:focus {
     width: 80%;
   }
 }
+
+.active {
+  background: #ff6a95;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 0 7px;
+}
