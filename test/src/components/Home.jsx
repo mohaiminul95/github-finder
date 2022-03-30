@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useContext } from "react";
+import AppContext from "../context/app-context";
 
-export default function Home() {
+function Home() {
+  const { message, isAuth, setIsAuth } = useContext(AppContext);
   return (
-    <div>Home</div>
-  )
+    <div style={{ background: isAuth ? "green" : "red" }}>
+      <h2>Home</h2>
+      <p>{message}</p>
+      {isAuth ? (
+        <button onClick={() => setIsAuth(false)}>Logout</button>
+      ) : (
+        <button onClick={() => setIsAuth(true)}>Login</button>
+      )}
+    </div>
+  );
 }
+
+export default Home;

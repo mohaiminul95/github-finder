@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-import "./App.css"
-import Home from './components/Home'
-import Feed from './components/Feed'
-import Calculator from './components/Calculator'
-
-
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import Feed from "./components/Feed";
+import Calculator from "./components/Calculator";
+import { AppProvider } from "./context/app-context";
 
 function App() {
   return (
@@ -13,26 +12,28 @@ function App() {
       <div className="App">
         <ul className="navStyle">
           <li>
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to='/feed'>Feed</Link>
+            <Link to="/feed">Feed</Link>
           </li>
           <li>
-            <Link to='/calculator'>Calculator</Link>
+            <Link to="/calculator">Calculator</Link>
           </li>
         </ul>
         <br />
         <hr />
 
+        <AppProvider>
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/feed' element={<Feed />} />
-            <Route path='/calculator' element={<Calculator />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/feed" element={<Feed />} />
+            <Route path="/calculator" element={<Calculator />} />
           </Routes>
+        </AppProvider>
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
