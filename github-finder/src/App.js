@@ -16,7 +16,7 @@ function App() {
     <GithubProvider>
       <AlertProvider>
         <BrowserRouter>
-          <div className="flex flex-col h-screen">
+          <div className="flex flex-col justify-between h-screen">
             <Navbar />
             <main className="container mx-auto px-3 pb-12">
               <Alert />
@@ -28,8 +28,8 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
+            <Footer />
           </div>
-          <Footer />
         </BrowserRouter>
       </AlertProvider>
     </GithubProvider>
